@@ -43,6 +43,8 @@ if [[ $system_os = *linux* ]] ; then
   redhat_release='/etc/redhat-release'
   if [[ $distro_sig =~ ubuntu ]] ; then
     distro="ubuntu"
+  elif [[ $distro_sig =~ "Amazon Linux AMI" ]] ; then
+    distro="amazon"
   else
       if [ -e $redhat_release ] ; then
           distro="centos"
