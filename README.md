@@ -8,10 +8,10 @@
 #
 ###To run:
 ####Linux
-  * `wget --no-check-certificate https://raw.githubusercontent.com/joshfng/railsready/master/railsready.sh && bash railsready.sh`
+  * `wget --no-check-certificate https://raw.githubusercontent.com/crypsis/railsready/master/railsready.sh && bash railsready.sh`
 
 ####OSX
-  * `curl -O https://raw.githubusercontent.com/joshfng/railsready/master/railsready.sh && bash railsready.sh`
+  * `curl -O https://raw.githubusercontent.com/crypsis/railsready/master/railsready.sh && bash railsready.sh`
 
 The script will ask if you want to build Ruby from source or install RVM
 
