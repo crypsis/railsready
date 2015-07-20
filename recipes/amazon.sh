@@ -33,7 +33,13 @@ echo -e "\n=> Installing build tools..."
 sudo yum install -y gcc-c++ patch \
  readline readline-devel zlib zlib-devel \
  libyaml-devel libffi-devel openssl-devel \
- make automake bash curl sqlite-devel mysql-devel >> $log_file 2>&1
+ make automake bash curl libcurl-devel sqlite-devel mysql-devel >> $log_file 2>&1
+echo "==> done..."
+
+# Install mysql server
+echo -e "\n=> Installing mysql server..."
+sudo yum install -y mysql-server >> $log_file 2>&1
+sudo service mysqld start >> $log_file 2>&1
 echo "==> done..."
 
 # Install Git
