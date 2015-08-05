@@ -189,6 +189,9 @@ echo -e "\n=> Reloading shell so ruby and rubygems are available..."
 if [ -f ~/.bashrc ] ; then
   source ~/.bashrc
 fi
+if [ -f ~/.bash_profile ] ; then
+  source .bash_profile
+fi
 echo "==> done..."
 
 echo -e "\n=> Updating Rubygems..."
@@ -209,6 +212,11 @@ elif [ $whichRuby -eq 2 ] ; then
 elif [ $whichRuby -eq 3 ] ; then
   gem install bundler passenger rails --no-ri --no-rdoc -f >> $log_file 2>&1
 fi
+echo "==> done..."
+
+echo -e "\n=> Installing Nginx..."
+rvmsudo passenger-install-nginx-module
+chmod a+rx $HOME
 echo "==> done..."
 
 echo -e "\n#################################"
