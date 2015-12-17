@@ -72,7 +72,7 @@ echo " * Bundler, Passenger, and Rails gems"
 echo " * Git"
 
 echo -e "\nThis script is always changing."
-echo "Make sure you got it from https://github.com/crypsis/railsready"
+echo "Make sure you got it from https://github.com/devathon/railsready"
 
 # Check if the user has sudo privileges.
 sudo -v >/dev/null 2>&1 || { echo $script_runner has no sudo privileges ; exit 1; }
@@ -104,9 +104,9 @@ echo "==> done..."
 echo -e "\n=> Downloading and running recipe for $distro...\n"
 #Download the distro specific recipe and run it, passing along all the variables as args
 if [[ $system_os = *linux* ]] ; then
-  wget --no-check-certificate -O $railsready_path/src/$distro.sh https://raw.githubusercontent.com/crypsis/railsready/master/recipes/$distro.sh && cd $railsready_path/src && bash $distro.sh $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsready_path $log_file
+  wget --no-check-certificate -O $railsready_path/src/$distro.sh https://raw.githubusercontent.com/devathon/railsready/master/recipes/$distro.sh && cd $railsready_path/src && bash $distro.sh $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsready_path $log_file
 else
-  cd $railsready_path/src && curl -O https://raw.githubusercontent.com/crypsis/railsready/master/recipes/$distro.sh && bash $distro.sh $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsready_path $log_file
+  cd $railsready_path/src && curl -O https://raw.githubusercontent.com/devathon/railsready/master/recipes/$distro.sh && bash $distro.sh $ruby_version $ruby_version_string $ruby_source_url $ruby_source_tar_name $ruby_source_dir_name $whichRuby $railsready_path $log_file
 fi
 echo -e "\n==> done running $distro specific commands..."
 
@@ -190,7 +190,7 @@ if [ -f ~/.bashrc ] ; then
   source ~/.bashrc
 fi
 if [ -f ~/.bash_profile ] ; then
-  source .bash_profile
+  source ~/.bash_profile
 fi
 echo "==> done..."
 
